@@ -5,11 +5,14 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> EneimiesToSpawn; 
+    baseEnemy EneimiesToSpawn;
+
+    EnemyManager enemyManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        enemyManager = FindObjectOfType<EnemyManager>();
+        enemyManager.spawners.Add(this);
     }
 
     // Update is called once per frame
@@ -20,11 +23,16 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        SpawnEnemy(EneimiesToSpawn[0]);
+        SpawnEnemy(EneimiesToSpawn);
     }
 
-    public void SpawnEnemy(GameObject Enemy)
+    public void SpawnEnemy(baseEnemy Enemy)
     {
+        print("NOT DONE: SPAWN ENEMY HERE");
+    }
 
+    private void OnDestroy()
+    {
+        enemyManager.spawners.Remove(this);
     }
 }
