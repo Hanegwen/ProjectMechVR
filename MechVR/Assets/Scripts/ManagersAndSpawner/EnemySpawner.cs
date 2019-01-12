@@ -29,6 +29,8 @@ public class EnemySpawner : MonoBehaviour
     public void SpawnEnemy(baseEnemy Enemy)
     {
         print("NOT DONE: SPAWN ENEMY HERE");
+
+        Instantiate(Enemy, this.transform);
     }
 
     private void OnDestroy()

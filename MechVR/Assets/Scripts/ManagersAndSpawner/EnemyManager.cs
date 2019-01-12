@@ -22,12 +22,16 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (canSpawn)
+        {
+            SpawnEnemy(spawners[0]);
+        }
     }
 
     void SpawnEnemy(EnemySpawner WhereToSpawn)
     {
         print("NOT DONE: SPAWN DEFAULY ENEMY");
+        WhereToSpawn.SpawnEnemy();
         canSpawn = false;
     }
 

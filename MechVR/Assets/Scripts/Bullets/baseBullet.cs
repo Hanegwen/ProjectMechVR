@@ -5,6 +5,7 @@ using UnityEngine;
 public class baseBullet : MonoBehaviour
 {
     float lifetime = 5;
+    float movementSpeed = 100;
 
     Rigidbody rigidbody;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class baseBullet : MonoBehaviour
     void MoveForward()
     {
         print("NOT CODED: Bullet Should be Moving Forward");
+        rigidbody.velocity = Vector3.forward * Time.deltaTime * movementSpeed;
     }
 
     void Lifetime()
